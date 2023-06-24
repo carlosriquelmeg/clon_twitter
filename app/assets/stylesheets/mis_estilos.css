@@ -1,0 +1,28 @@
+.btn_buscar{
+	box-shadow: 3px 4px 0px 0px #252525;
+	background-color:#f6f4f6;
+	border-radius:2px;
+	border:1px solid #252525;
+	display:inline-block;
+	cursor:pointer;
+	color:#252525;
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	font-size:15px;
+	padding:4px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #252525;
+}
+
+.btn_buscar:hover {
+	background-color:#fef8b4;
+	transform: translate(5px, 5px);
+	box-shadow: 0px 0px 0px 0px;
+}
+
+.btn_buscar:active {
+	position:relative;
+	top:1px;
+}
+
+    

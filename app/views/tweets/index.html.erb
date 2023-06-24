@@ -2,13 +2,24 @@
 
 <h1>Tweets</h1>
 
-<div id="tweets">
-  <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
-  <% end %>
-</div>
+<%= form_with url: tweets_path, method: :get do |form| %>
+  <%= form.text_field :query_text, value: params[:query_text], class: 'inputform' %>
+  <%= form.submit :Buscar, class: 'btn_buscar' %>
+<% end %>
+
+
+<% if @tweets.count > 0 %>
+  <div id="tweets">
+    <% @tweets.each do |tweet| %>
+      <%= render tweet %>
+      <p>
+        <%= link_to "Show this tweet", tweet %>
+      </p>
+    <% end %>
+  </div>
+
+  <% else %>
+  <h1>No se encontraron tweets</h1>
+<% end %>
 
 <%= link_to "New tweet", new_tweet_path %>
