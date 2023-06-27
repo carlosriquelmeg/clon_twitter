@@ -1,25 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tweets</h1>
+<h1>Tweets <i class="fab fa-twitter-square"></i></h1> 
 
 <%= form_with url: tweets_path, method: :get do |form| %>
-  <%= form.text_field :query_text, value: params[:query_text], class: 'inputform' %>
-  <%= form.submit :Buscar, class: 'btn_buscar' %>
+  <%= form.text_field :query_text, value: params[:query_text], placeholder: 'Buscar en Twitter',class: 'input-twitter mb-3' %>
+  <%= form.submit :Buscar, class: 'btn-twitter' %>
 <% end %>
+
+<%= link_to new_tweet_path, class: "btn-twitter" do %>
+  Twittear <i class="fab fa-twitter-square ml-1"></i>
+<% end %>
+
 
 
 <% if @tweets.count > 0 %>
-  <div id="tweets">
+  <div id="tweets" class="mt-5">
     <% @tweets.each do |tweet| %>
-      <%= render tweet %>
-      <p>
-        <%= link_to "Show this tweet", tweet %>
-      </p>
+      <div class="card mb-3 card1">
+        <div class="card-body card1 shadow rounded">
+          <%= render tweet %>
+          <p class="card-text">
+            <%= link_to tweet, class: "btn-twitter2 btn-sm" do %>
+            <i class="fab fa-twitter-square"></i>
+          <% end %>
+          
+          </p>
+        </div>
+      </div>
     <% end %>
   </div>
+  <%==pagy_bootstrap_nav(@pagy)%>
 
-  <% else %>
+<% else %>
   <h1>No se encontraron tweets</h1>
 <% end %>
 
-<%= link_to "New tweet", new_tweet_path %>

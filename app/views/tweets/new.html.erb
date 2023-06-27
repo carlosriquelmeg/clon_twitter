@@ -1,9 +1,12 @@
-<h1>New tweet</h1>
+<h1>Nuevo Tweet <i class="fab fa-twitter-square"></i></h1> 
 
 <%= render "form", tweet: @tweet %>
 
 <br>
 
 <div>
-  <%= link_to "Back to tweets", tweets_path %>
+  <%= link_to "Volver a todos los tweets", tweets_path, class: "btn-twitter" %>
 </div>
+
+
+

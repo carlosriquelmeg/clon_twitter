@@ -12,16 +12,19 @@
   <% end %>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :description,"Tweet", style: "display: block" %>
+    <%= form.text_area :description,class: 'input-twitter mb-3' %>
   </div>
 
   <div>
-    <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
+    <%= form.label :username,"Username que twitea",style: "display: block" %>
+    <%= form.text_field :username,class: 'input-twitter mb-3' %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <!-- <div>
+    <%= form.submit "Twittear",class: "btn-twitter" %>
+  </div> -->
+  <%= button_tag type: 'submit', class: 'btn-twitter' do %>
+  <i class="fab fa-twitter-square ml-1"></i> Twittear
+<% end %>
 <% end %>
